@@ -1,0 +1,17 @@
+name: Render Deploy
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Render Deploy Action
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{secrets.SERVICE_PROD_ID}}
+        api-key: ${{secrets.API_PROD_KEY}}
