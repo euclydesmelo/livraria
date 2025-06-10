@@ -1,6 +1,7 @@
 package br.ufpi.livraria.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +26,12 @@ public class ShoppingCartController {
 	@PostMapping
 	public String add(@RequestBody Book book) {
 		cart.add(book);
+		return "Total: " + cart.getTotal();
+	}
+	
+	@DeleteMapping
+	public String del(String isbn) {
+		cart.remove(new Book(isbn));
 		return "Total: " + cart.getTotal();
 	}
 

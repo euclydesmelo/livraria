@@ -6,4 +6,4 @@ COPY . .
 
 RUN /bin/bash -c "/mvnw clean package"
 
-ENTRYPOINT [ "java", "-jar", "livraria-1.0.0.jar" ]
+ENTRYPOINT [ "java", "-jar", "/target/livraria-1.0.0.jar" ]
