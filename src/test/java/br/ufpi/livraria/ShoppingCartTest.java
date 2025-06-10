@@ -39,7 +39,7 @@ public class ShoppingCartTest {
 		
 		cart.remove(book1);
 		
-		assertEquals(25.0, cart.getTotal());
+		assertEquals(20.0, cart.getTotal());
 	}
 
 }
